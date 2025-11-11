@@ -3,6 +3,9 @@ package com.ali.mapper;
 import com.ali.pojo.Category;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 @Mapper
 public interface CategoryMapper {
@@ -11,4 +14,7 @@ public interface CategoryMapper {
             "values (#{categoryName},#{categoryAlias},#{createUser},#{createTime},#{updateTime})"
     )
     void add(Category category);
+    //查询所有
+    @Select("select * from category where create_user = #{userId}")
+    List<Category> list(Integer userId);
 }
