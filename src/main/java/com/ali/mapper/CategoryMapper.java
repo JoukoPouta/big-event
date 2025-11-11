@@ -1,10 +1,7 @@
 package com.ali.mapper;
 
 import com.ali.pojo.Category;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -19,9 +16,15 @@ public interface CategoryMapper {
     @Select("select * from category where create_user = #{userId}")
     List<Category> list(Integer userId);
 
+    //根据id查询
     @Select("select * from category where id = #{id}")
     Category findById(Integer id);
 
+    //更新
     @Update("update category set category_name = #{categoryName},category_alias = #{categoryAlias},update_time = #{updateTime} where id = #{id}")
     void update(Category category);
+
+    //删除
+    @Delete("delete from category where id = #{id}")
+    void deleteById(Integer id);
 }
