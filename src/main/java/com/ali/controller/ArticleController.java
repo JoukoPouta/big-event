@@ -1,28 +1,22 @@
 package com.ali.controller;
 
+import com.ali.pojo.Article;
 import com.ali.pojo.Result;
-import com.ali.utils.JwtUtil;
-import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.ali.service.ArticleService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
 @RestController
 @RequestMapping("/article")
 public class ArticleController {
-    @GetMapping("/list")
-    public Result<String> list(/*@RequestHeader(name = "Authorization") String token, HttpServletResponse response*/){
-//        //验证token
-//        try {
-//            Map<String, Object> claims = JwtUtil.parseToken(token);
-//            return Result.success("文章列表");
-//        } catch (Exception e) {
-//            response.setStatus(401);
-//            return Result.error("未登录");
-//        }
-        return Result.success("文章列表");
+    @Autowired
+    private ArticleService articleService;
+    @PostMapping
+    public Result add(@RequestBody @Validated Article article){
+        articleService.add(article);
+        return Result.success();
     }
 }

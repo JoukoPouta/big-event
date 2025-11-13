@@ -2,6 +2,7 @@
 <project version="4">
   <component name="DataSourcePerFileMappings">
     <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/ac2c4d09-a226-40bc-ad00-b96ee0d10d3e/console.sql" value="ac2c4d09-a226-40bc-ad00-b96ee0d10d3e" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/ali/mapper/ArticleMapper.java" value="ac2c4d09-a226-40bc-ad00-b96ee0d10d3e" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/ali/mapper/CategoryMapper.java" value="ac2c4d09-a226-40bc-ad00-b96ee0d10d3e" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/ali/mapper/UserMapper.java" value="ac2c4d09-a226-40bc-ad00-b96ee0d10d3e" />
   </component>
